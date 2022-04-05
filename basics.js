@@ -230,3 +230,99 @@ console.log(newShapes3);
 console.log(newShapes4);
 
 // classes, modules, import, export, map and filter
+// classes
+class Student {
+  constructor(rollNo, name, age) {
+    this.rollNo = rollNo;
+    this.name = name;
+    this.age = age;
+  }
+
+  //getters & setters
+  getRollNo() {
+    return this.rollNo;
+  }
+  getName() {
+    return this.name;
+  }
+  getAge() {
+    return this.age;
+  }
+  setRollNo(rollNo) {
+    this.rollNo = rollNo;
+  }
+  setName(name) {
+    this.name = name;
+  }
+  setAge(age) {
+    this.age = age;
+  }
+}
+
+// Create objects
+const std1 = new Student(1000, "ravi", 12);
+const std2 = new Student(1001, "sam", 13);
+
+// read student properties
+console.log(std1);
+
+console.log(std1.getName());
+
+console.log(std2.getRollNo());
+
+// Update student properties
+std1.setAge(13);
+console.log(std1);
+
+// Initializing student properties with set methods
+const std3 = new Student();
+console.log(std3);
+std3.setRollNo(1002);
+std3.setName("Sachin");
+std3.setAge(15);
+console.log(std3);
+
+console.log();
+// map & filter
+let numArr1 = [1, 2, 3, 4];
+
+// square function
+function square(inputArr) {
+  let newArr = [];
+  for (let i = 0; i < inputArr.length; i++) {
+    let sq = inputArr[i] * inputArr[i];
+    newArr.push(sq);
+  }
+  return newArr;
+}
+
+// call function
+console.log(square(numArr1));
+
+console.log();
+// map function
+const squares = numArr1.map((n) => n * n);
+console.log(squares);
+
+const cubes = numArr1.map((n) => n * n * n);
+console.log(cubes);
+
+// filter
+const numsGrt50 = [10, 20, 35, 45, 50, 67, 88].filter((n) => n > 50);
+console.log(numsGrt50);
+
+// function numGrt(num1) {
+//   if (num1 > 50) {
+//     return num1;
+//   }
+// }
+
+const evenNums = [10, 20, 35, 45, 50, 67, 88].filter((num) => num % 2 == 0);
+console.log(evenNums);
+
+// return all numbers other than 45
+
+const nums = [10, 20, 35, 45, 50, 67, 88].filter((num) => num != 45);
+console.log(nums);
+
+// import & export
