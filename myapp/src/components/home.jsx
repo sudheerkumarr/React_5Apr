@@ -10,6 +10,7 @@ Components:
  sfc - stateless functional component
 */
 import React, { Component } from "react";
+import EmployeeTable from "./emptable";
 
 class Home extends Component {
   state = {
@@ -29,31 +30,11 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Home Page</h1>
-        <h2>{this.state.counter}</h2>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Emp Id</th>
-              <th>Name</th>
-              <th>Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* <tr>
-              <td>{this.state.employee.empId}</td>
-              <td>{this.state.employee.name}</td>
-              <td>{this.state.employee.age}</td>
-            </tr> */}
-            {this.state.employees.map((emp) => (
-              <tr>
-                <td>{emp.empId}</td>
-                <td>{emp.name}</td>
-                <td>{emp.age}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <EmployeeTable
+          employees={this.state.employees}
+          emp={this.state.employee}
+          counter={this.state.counter}
+        />
       </div>
     );
   }

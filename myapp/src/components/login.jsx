@@ -6,7 +6,6 @@ import React from "react";
 const Login = () => {
   return (
     <div className="mx-auto w-50 border px-3 pb-3 ">
-      <h1>Login Page</h1>
       <form>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">
