@@ -6,7 +6,9 @@ import "bootstrap/dist/css/bootstrap.css"; // import bootstrap
 import Nav from "./components/nav";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Register from "./components/register";
+import About from "./components/about";
 import PageNotFound from "./components/pagenotfound";
+import Posts from "./components/posts";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/about" component={About} />
+        <Route path="/posts" component={Posts} />
         <Redirect path="/home" to="/" />
         <Route component={PageNotFound} />
       </Switch>
