@@ -27,11 +27,28 @@ class Posts extends Component {
     console.log("Inside componentWillUnmount()");
   }
 
+  // delete post
+  handleDelete = (postId) => {
+    console.log("Inside Delete");
+    console.log(postId);
+    axios
+      .delete(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+      .then((res) => {
+        console.log(res);
+        alert("Deleted post " + postId + " successfully!");
+      })
+      .catch((err) => console.log(err));
+  };
+  // update post
+  // add post
+
   render() {
     console.log("Inside render() method");
     return (
       <div className="container ">
-        <h1>Posts Page</h1>
+        <button type="button" className="btn btn-primary float-end mt-3">
+          Add Post
+        </button>
         <table className="table table-striped">
           <thead>
             <tr>
@@ -53,7 +70,11 @@ class Posts extends Component {
                   <button type="button" className="btn btn-primary">
                     Update
                   </button>
-                  <button type="button" className="btn btn-secondary">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={() => this.handleDelete(p.id)}
+                  >
                     Delete
                   </button>
                 </td>
