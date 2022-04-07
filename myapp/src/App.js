@@ -9,6 +9,8 @@ import Register from "./components/register";
 import About from "./components/about";
 import PageNotFound from "./components/pagenotfound";
 import Posts from "./components/posts";
+import AddPost from "./components/addpost";
+import UpdatePost from "./components/updatepost";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/register" component={Register} />
         <Route path="/about" component={About} />
         <Route path="/posts" component={Posts} />
+        <Route path="/addpost" component={AddPost} />
+        <Route path="/post/update/:id" component={UpdatePost} />
         <Redirect path="/home" to="/" />
         <Route component={PageNotFound} />
       </Switch>

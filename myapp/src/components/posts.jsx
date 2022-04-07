@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Posts extends Component {
   constructor(props) {
@@ -46,10 +47,14 @@ class Posts extends Component {
     console.log("Inside render() method");
     return (
       <div className="container ">
-        <button type="button" className="btn btn-primary float-end mt-3">
+        <Link
+          type="button"
+          className="btn btn-primary float-end mt-3"
+          to="/addpost"
+        >
           Add Post
-        </button>
-        <table className="table table-striped">
+        </Link>
+        <table className="table table-striped table-hover">
           <thead>
             <tr>
               <th scope="col">User ID</th>
@@ -67,9 +72,13 @@ class Posts extends Component {
                 <td>{p.title}</td>
                 <td>{p.body}</td>
                 <td>
-                  <button type="button" className="btn btn-primary">
+                  <Link
+                    type="button"
+                    className="btn btn-primary"
+                    to={`/post/update/${p.id}`}
+                  >
                     Update
-                  </button>
+                  </Link>
                   <button
                     type="button"
                     className="btn btn-secondary"
