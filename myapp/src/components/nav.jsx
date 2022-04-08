@@ -40,7 +40,7 @@ const Nav = () => {
           </ul>
           <ul className="ms-auto navbar-nav ">
             <li className="nav-item">
-              <NavLink className="nav-link" to="#">
+              <NavLink className="nav-link" to="/cart">
                 Cart<i class="bi bi-cart"></i>
               </NavLink>
             </li>
