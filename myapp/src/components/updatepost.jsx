@@ -13,7 +13,7 @@ class UpdatePost extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://jsonplaceholder.typicode.com/posts/${this.props.match.params.id}`
+        `https://jsonplaceholder.typicode.com/posts/${this.props.match.params.postId}`
       )
       .then((res) => {
         this.setState({ post: res.data });
@@ -31,6 +31,8 @@ class UpdatePost extends Component {
     //post[userId] = 123;
 
     // capture user input
+    // newPost.userId = 123
+    // newPost['userId'] = 123
     newPost[event.target.name] = event.target.value;
     // Update state object
     this.setState({ post: newPost });

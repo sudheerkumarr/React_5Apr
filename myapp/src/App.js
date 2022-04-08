@@ -23,7 +23,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/posts" component={Posts} />
         <Route path="/addpost" component={AddPost} />
-        <Route path="/post/update/:id" component={UpdatePost} />
+        <Route path="/post/update/:postId" component={UpdatePost} />
         <Redirect path="/home" to="/" />
         <Route component={PageNotFound} />
       </Switch>
