@@ -39,6 +39,12 @@ const Nav = () => {
                 Posts
               </NavLink>
             </li>
+
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/products">
+                Products
+              </NavLink>
+            </li>
           </ul>
           <ul className="ms-auto navbar-nav ">
             <li className="nav-item">
