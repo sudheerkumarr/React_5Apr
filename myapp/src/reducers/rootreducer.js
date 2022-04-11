@@ -4,7 +4,7 @@ import productReducer from "./productreducer";
 
 const rootReducer = combineReducers({
   count: counterReducer,
-  products: productReducer,
+  fakeStore: productReducer,
 });
 
 export default rootReducer;

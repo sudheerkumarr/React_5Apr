@@ -12,28 +12,38 @@ class Products extends Component {
     console.log("componentDidMount");
     // Dispatch action to get all products
     this.props.getAllProductsAction();
+    setTimeout(() => {
+      this.setState({ products: this.props.products });
+    }, 2000);
   }
   render() {
     console.log(this.props.products);
+    console.log(this.state.products);
     return (
       <div>
         <h1>Products Page</h1>
         <div className="row">
-          <div className="col-lg-3 col-md-4 col-sm-2 col-xs-12">
-            <div className="card" style={{ width: "18rem" }}>
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <Link to="#" className="btn btn-primary">
-                  Go somewhere
-                </Link>
+          {this.state.products.map((product) => (
+            <div className="col-lg-3 col-md-4 col-sm-2 col-xs-12">
+              <div className="card">
+                <img
+                  src={product.image}
+                  className="card-img-top"
+                  alt={product.title}
+                />
+                <div className="card-body">
+                  <p className="card-title">{product.title}</p>
+                  <p>Price: {product.price}</p>
+                  <Link
+                    to={`/products/${product.id}`}
+                    className="btn btn-primary"
+                  >
+                    More info...
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     );
@@ -43,7 +53,7 @@ class Products extends Component {
 // funtion to get updates from store
 const mapStateToProps = (state) => {
   return {
-    count: state.products,
+    products: state.fakeStore.products,
   };
 };
 

@@ -14,6 +14,7 @@ import UpdatePost from "./components/updatepost";
 import Counter from "./components/counter";
 import Cart from "./components/cart";
 import Products from "./components/products";
+import ProductDetails from "./components/productdetails";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/addpost" component={AddPost} />
         <Route path="/counter" component={Counter} />
         <Route path="/cart" component={Cart} />
+        <Route path="/products/:productId" component={ProductDetails} />
         <Route path="/products" component={Products} />
         <Route path="/post/update/:postId" component={UpdatePost} />
         <Redirect path="/home" to="/" />
