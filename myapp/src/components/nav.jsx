@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 //import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
+  const count = useSelector((state) => state.count);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -41,7 +43,7 @@ const Nav = () => {
           <ul className="ms-auto navbar-nav ">
             <li className="nav-item">
               <NavLink className="nav-link" to="/cart">
-                Cart<i class="bi bi-cart"></i>
+                Cart<i class="bi bi-cart">{count}</i>
               </NavLink>
             </li>
             <li className="nav-item">
